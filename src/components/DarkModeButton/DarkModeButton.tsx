@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './DarkModeButton.css';
+import { ReactComponent as Moon } from '../../assets/moon.svg';
 
 const DarkModeButton = () => {
   const [isDark, setIsDark] = useState(
@@ -41,7 +42,7 @@ const DarkModeButton = () => {
 
   return (
     <button className="dark-mode-button" onClick={toggleTheme}>
-      <img className="icon" src="assets/moon.svg" alt="moon" />
+      <Moon className="moon"></Moon>
       <span className="text">Dark Mode</span>
     </button>
   );

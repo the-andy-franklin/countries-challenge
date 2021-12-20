@@ -1,0 +1,23 @@
+.input-container {
+  position: relative;
+  border-radius: 4px;
+  box-shadow: var(--shadow)
+}
+
+.input {
+  background-color: white;
+  padding: 10px;
+  color: var(--input-color);
+  height: 20px;
+  border: unset;
+  padding-left: 40px;
+}
+
+.search {
+  fill: black;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}

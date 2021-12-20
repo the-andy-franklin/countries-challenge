@@ -1,13 +1,13 @@
 :root {
-  --font-color: #333;
-  --background-color: #eee;
-  --link-color: cornflowerblue;
+  --font-color: hsl(200, 15%, 8%);
+  --background-color: hsl(0, 0%, 98%);
+
 }
 
 [data-theme="dark"] {
-  --font-color: #eee;
-  --background-color: #333;
-  --link-color: lightblue;
+  --font-color: hsl(0, 0%, 100%);
+  --background-color: hsl(207, 26%, 17%);
+
 }
 
 body {

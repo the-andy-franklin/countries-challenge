@@ -26,7 +26,7 @@ const Detail = ({ countries }: Props) => {
         </button>
       </div>
       <div className="detail-container">
-        <div className="flag">
+        <div className="flag-wrapper">
           <img
             className="detail-flag-img"
             src={`/${country?.flag}`}
@@ -65,13 +65,15 @@ const Detail = ({ countries }: Props) => {
               </p>
             </div>
           </div>
-          <div className="detail-border-countries">
-            <strong>Border Countries:</strong>
-            {country?.borderCountries.map((borderCountry) => (
-              <div className="border-country" key={borderCountry}>
-                {borderCountry}
-              </div>
-            ))}
+          <div className="border-wrapper">
+            <strong className="border-title">Border Countries:</strong>
+            <div className="border-countries">
+              {country?.borderCountries.map((borderCountry) => (
+                <div className="border-country" key={borderCountry}>
+                  {borderCountry}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

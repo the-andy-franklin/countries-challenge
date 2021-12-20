@@ -1,11 +1,12 @@
 .input-container {
+  grid-column: 1 / 6;
   position: relative;
   border-radius: 4px;
   box-shadow: var(--shadow)
 }
 
 .input {
-  width: 300px;
+  width: calc(100% - 50px);
   border-radius: 5px;
   background-color: white;
   padding: 10px;

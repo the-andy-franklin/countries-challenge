@@ -8,13 +8,26 @@
 }
 
 .filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 40px;
+}
+
+@media (max-width: 350px) {
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
 }

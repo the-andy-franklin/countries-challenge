@@ -12,7 +12,7 @@ const RegionFilter = ({ setRegion }: Props) => {
   };
 
   return (
-    <div>
+    <div className="select-wrapper">
       <select
         className="select"
         name="country"

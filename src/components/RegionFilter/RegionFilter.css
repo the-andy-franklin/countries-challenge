@@ -1,4 +1,7 @@
+.select-wrapper {
+  grid-column: 12 / 13;
+}
+
 .select {
-  width: 200px;
   height: 40px;
 }

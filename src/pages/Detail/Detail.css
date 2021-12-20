@@ -25,13 +25,14 @@
   gap: 40px;
 }
 
-.flag {
+.flag-wrapper {
   height: 400px;
   width: 400px;
 }
 
 .detail-flag-img {
-  width: 100%
+  width: 100%;
+  box-shadow: var(--shadow);
 }
 
 .details {
@@ -54,7 +55,7 @@
   text-align: left;
 }
 
-.detail-border-countries {
+.border-wrapper {
   margin-top: 40px;
 }
 
@@ -65,4 +66,40 @@
   padding: 10px;
   margin: 2px;
   box-shadow: var(--shadow)
+}
+
+@media (max-width: 350px) {
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-specifics {
+    display: grid;
+    grid-template-columns: unset;
+    grid-template-rows: auto auto;
+    gap: 20px
+  }
+
+  .flag-wrapper {
+    height: unset;
+    width: unset;
+  }
+
+  .border-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .border-title {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .border-countries {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+  }
 }

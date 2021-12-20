@@ -1,7 +1,9 @@
-.card-wrapper {
-  width: 200px;
+.card {
+  width: 250px;
   border-radius: 5px;
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
+  color: var(--font-color);
+  text-decoration: none;
 }
 
 .flag-img {

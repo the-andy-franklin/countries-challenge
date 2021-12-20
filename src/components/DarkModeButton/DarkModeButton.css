@@ -1,0 +1,14 @@
+.dark-mode-button {
+  display: 'flex';
+  padding: 0 10px;
+  gap: 10px;
+  justify-content: space-between;
+  border: unset;
+  background-color: unset;
+}
+
+.icon {
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+}

@@ -1,7 +1,8 @@
-.select-wrapper {
-  grid-column: 12 / 13;
-}
-
 .select {
   height: 40px;
+  background-color: var(--element-color);
+  color: var(--font-color);
+  border: unset;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
 }

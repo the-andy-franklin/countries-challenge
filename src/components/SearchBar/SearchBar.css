@@ -1,5 +1,7 @@
 .input-container {
-  grid-column: 1 / 6;
+  min-width: 200px;
+  margin-right: 10px;
+  width: 250px;
   position: relative;
   border-radius: 4px;
   box-shadow: var(--shadow)
@@ -8,16 +10,16 @@
 .input {
   width: calc(100% - 50px);
   border-radius: 5px;
-  background-color: white;
+  background-color: var(--element-color);
+  color: var(--font-color);
   padding: 10px;
-  color: var(--input-color);
   height: 20px;
   border: unset;
   padding-left: 40px;
 }
 
 .search {
-  fill: black;
+  fill: var(--font-color);
   height: 18px;
   position: absolute;
   top: 50%;

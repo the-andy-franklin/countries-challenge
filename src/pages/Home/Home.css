@@ -8,8 +8,8 @@
 }
 
 .filters {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-grid {
@@ -25,7 +25,6 @@
   }
 
   .filters {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;

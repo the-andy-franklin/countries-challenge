@@ -2,7 +2,7 @@
   --font-color: hsl(200, 15%, 8%);
   --background-color: hsl(0, 0%, 98%);
   --input-color: hsl(0, 0%, 52%);
-  --element-color: 'white';
+  --element-color: hsl(0, 0%, 100%);
   --shadow: 2px 2px 10px -2px black;
 }
 

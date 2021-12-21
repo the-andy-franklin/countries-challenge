@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react';
+import { useState } from 'react';
 import './RegionFilter.css';
 
 type Props = {

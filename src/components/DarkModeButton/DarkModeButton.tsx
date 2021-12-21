@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './DarkModeButton.css';
 import { ReactComponent as Moon } from '../../assets/moon.svg';
 

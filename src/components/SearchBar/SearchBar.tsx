@@ -1,13 +1,13 @@
-import React from 'react';
+import { Dispatch, SetStateAction, ChangeEvent } from 'react';
 import './SearchBar.css';
 import { ReactComponent as Search } from '../../assets/search.svg';
 
 type Props = {
-  setFilter: React.Dispatch<React.SetStateAction<string>>;
+  setFilter: Dispatch<SetStateAction<string>>;
 };
 
 const SearchBar = ({ setFilter }: Props) => {
-  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFilter = (e: ChangeEvent<HTMLInputElement>) => {
     setFilter(e.currentTarget.value);
   };
 

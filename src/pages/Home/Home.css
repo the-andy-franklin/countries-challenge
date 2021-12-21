@@ -1,6 +1,6 @@
 .page {
   background-color: var(--background-color);
-  padding: 40px 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -9,12 +9,12 @@
 .filters {
   display: flex;
   flex-wrap: wrap;
-  margin-top: -40px;
+  margin-top: -20px;
   justify-content: space-between;
 }
 
 .filters > * {
-  margin-top: 40px
+  margin-top: 20px
 }
 
 .card-grid {

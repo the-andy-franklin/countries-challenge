@@ -32,7 +32,6 @@ const DarkModeButton = () => {
   }
 
   const toggleTheme = () => {
-    console.log('going');
     if (!isDark) {
       setDark();
     } else if (isDark) {

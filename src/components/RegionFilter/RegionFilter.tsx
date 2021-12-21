@@ -41,6 +41,9 @@ const RegionFilter = ({ setRegion }: Props) => {
           <div className="option" onClick={(e) => handleClick(e)}>
             Oceania
           </div>
+          <div className="option" onClick={(e) => handleClick(e)}>
+            Europe
+          </div>
         </div>
       )}
     </div>

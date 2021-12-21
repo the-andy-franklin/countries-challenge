@@ -16,7 +16,6 @@ const Detail = ({ countries }: Props) => {
   };
 
   const country = countries.find((country) => country.name === name);
-  console.log(country);
 
   return (
     <div className="detail-page">
@@ -27,7 +26,11 @@ const Detail = ({ countries }: Props) => {
       </div>
       <div className="detail-container">
         <div className="flag-wrapper">
-          <img className="flag-img" src={`/${country?.flag}`} alt="flag" />
+          <img
+            className="detail-flag-img"
+            src={`/${country?.flag}`}
+            alt="flag"
+          />
         </div>
         <div className="details">
           <h2 className="detail-name">{country?.name}</h2>

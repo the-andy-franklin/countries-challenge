@@ -1,5 +1,6 @@
 .select-wrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .select {
@@ -18,7 +19,7 @@
 
 .arrow {
   font-size: 20px;
-  transform: translate(-5%, 10%)
+  transform: translate(-5%, 10%);
 }
 
 .rotate {

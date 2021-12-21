@@ -3,9 +3,10 @@ import './RegionFilter.css';
 
 type Props = {
   setRegion: React.Dispatch<React.SetStateAction<string>>;
+  regions?: string[];
 };
 
-const RegionFilter = ({ setRegion }: Props) => {
+const RegionFilter = ({ setRegion, regions }: Props) => {
   const [selected, setSelected] = useState('Filter by Region');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,15 +36,15 @@ const RegionFilter = ({ setRegion }: Props) => {
           <div className="option" onClick={(e) => handleClick(e)}>
             &lt;None&gt;
           </div>
-          <div className="option" onClick={(e) => handleClick(e)}>
-            North America
-          </div>
-          <div className="option" onClick={(e) => handleClick(e)}>
-            Oceania
-          </div>
-          <div className="option" onClick={(e) => handleClick(e)}>
-            Europe
-          </div>
+          {regions?.map((region) => (
+            <div
+              className="option"
+              key={region}
+              onClick={(e) => handleClick(e)}
+            >
+              {region}
+            </div>
+          ))}
         </div>
       )}
     </div>

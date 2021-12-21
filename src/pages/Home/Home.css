@@ -14,11 +14,22 @@
 }
 
 .filters > * {
-  margin-top: 20px
+  margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+  .filters {
+    justify-content: center;
+  }
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
+}
+
+.card-flex {
+  display: flex;
+  justify-content: center;
 }

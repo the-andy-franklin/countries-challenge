@@ -1,8 +1,6 @@
 .input-container {
-  flex: 1 1 210px;
+  width: 210px;
   min-width: 210px;
-  max-width: 300px;
-  margin-right: 10px;
   position: relative;
   border-radius: 4px;
   box-shadow: var(--shadow)

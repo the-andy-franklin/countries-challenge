@@ -1,7 +1,6 @@
 import './Detail.css';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { countries } from '../../mocks/countries';
-import { Country } from '../../App';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Country } from '../../types/Country';
 
 type Props = {
   countries: Country[];
@@ -28,7 +27,7 @@ const Detail = ({ countries }: Props) => {
         <div className="flag-wrapper">
           <img
             className="detail-flag-img"
-            src={`/${country?.flag}`}
+            src={country?.flags.svg}
             alt="flag"
           />
         </div>
@@ -36,42 +35,48 @@ const Detail = ({ countries }: Props) => {
           <h2 className="detail-name">{country?.name}</h2>
           <div className="detail-specifics">
             <div className="detail-left">
-              <p>
+              <p className="item">
                 <strong>Native Name:</strong> {country?.nativeName}
               </p>
-              <p>
+              <p className="item">
                 <strong>Population:</strong> {country?.population}
               </p>
-              <p>
+              <p className="item">
                 <strong>Region:</strong> {country?.region}
               </p>
-              <p>
+              <p className="item">
                 <strong>Subregion:</strong> {country?.subregion}
               </p>
-              <p>
+              <p className="item">
                 <strong>Capital:</strong> {country?.capital}
               </p>
             </div>
             <div className="detail-right">
-              <p>
+              <p className="item">
                 <strong>Top-Level Domain:</strong> {country?.topLevelDomain}
               </p>
-              <p>
-                <strong>Currencies:</strong> {country?.currencies}
+              <p className="item">
+                <strong>Currencies:</strong>{' '}
+                {country?.currencies
+                  ?.map((currency) => currency.name)
+                  .join(', ')}
               </p>
-              <p>
-                <strong>Languages:</strong> {country?.languages}
+              <p className="item">
+                <strong>Languages:</strong>{' '}
+                {country?.languages
+                  ?.map((language) => language.name)
+                  .join(', ')}
               </p>
             </div>
           </div>
           <div className="border-wrapper">
             <strong className="border-title">Border Countries:</strong>
             <div className="border-countries">
-              {country?.borderCountries.map((borderCountry) => (
+              {country?.borders?.map((borderCountry) => (
                 <div className="border-country" key={borderCountry}>
                   {borderCountry}
                 </div>
-              ))}
+              )) || <div className="border-country">&lt;None&gt;</div>}
             </div>
           </div>
         </div>

@@ -4,7 +4,8 @@
   padding: 10px 20px;
   border: unset;
   border-radius: 5px;
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .detail-page {

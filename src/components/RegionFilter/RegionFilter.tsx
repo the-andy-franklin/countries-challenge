@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef, useState } from 'react';
 import './RegionFilter.css';
 
 type Props = {
@@ -6,24 +6,43 @@ type Props = {
 };
 
 const RegionFilter = ({ setRegion }: Props) => {
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
-    setRegion(e.target.value);
+  const [selected, setSelected] = useState('Filter by Region');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const value = e.currentTarget.innerText;
+    setSelected(value === '<None>' ? 'Filter by Region' : value);
+    setRegion(value === '<None>' ? '' : value);
+    setIsOpen(false);
+  };
+
+  const handleDropdown = () => {
+    setIsOpen((prevState) => !prevState);
   };
 
   return (
     <div className="select-wrapper">
-      <select
-        className="select"
-        name="country"
-        defaultValue=""
-        placeholder="Filter by Region"
-        onChange={(e) => handleChange(e)}
-      >
-        <option value="">&lt;None&gt;</option>
-        <option value="North America">North America</option>
-        <option value="Oceania">Oceania</option>
-      </select>
+      <div className="select" onClick={handleDropdown}>
+        <span>{selected}</span>
+        {isOpen ? (
+          <span className="arrow">∧</span>
+        ) : (
+          <span className="arrow">v</span>
+        )}
+      </div>
+      {isOpen && (
+        <div className="options-wrapper">
+          <div className="option" onClick={(e) => handleClick(e)}>
+            &lt;None&gt;
+          </div>
+          <div className="option" onClick={(e) => handleClick(e)}>
+            North America
+          </div>
+          <div className="option" onClick={(e) => handleClick(e)}>
+            Oceania
+          </div>
+        </div>
+      )}
     </div>
   );
 };

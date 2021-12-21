@@ -1,8 +1,40 @@
+.select-wrapper {
+  position: relative;
+}
+
 .select {
-  height: 40px;
+  height: 32px;
+  width: 200px;
+  padding: 5px;
   background-color: var(--element-color);
   color: var(--font-color);
   border: unset;
   border-radius: 5px;
   box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.options-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  top: 50px;
+  width: 200px;
+  padding: 5px;
+  background-color: var(--element-color);
+  box-shadow: var(--shadow);
+  cursor: pointer
+}
+
+.option {
+  text-align: left;
+}
+
+.option:hover {
+  background-color: var(--background-color);
 }

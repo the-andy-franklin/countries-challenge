@@ -32,28 +32,34 @@ const Detail = ({ countries }: Props) => {
           />
         </div>
         <div className="details">
-          <h2 className="detail-name">{country?.name}</h2>
+          <h2 className="detail-name">{' ' + country?.name}</h2>
           <div className="detail-specifics">
             <div className="detail-left">
               <p className="item">
-                <strong>Native Name:</strong> {country?.nativeName}
+                <strong>Native Name:</strong>
+                {' ' + country?.nativeName}
               </p>
               <p className="item">
-                <strong>Population:</strong> {country?.population}
+                <strong>Population:</strong>
+                {' ' + country?.population}
               </p>
               <p className="item">
-                <strong>Region:</strong> {country?.region}
+                <strong>Region:</strong>
+                {' ' + country?.region}
               </p>
               <p className="item">
-                <strong>Subregion:</strong> {country?.subregion}
+                <strong>Subregion:</strong>
+                {' ' + country?.subregion}
               </p>
               <p className="item">
-                <strong>Capital:</strong> {country?.capital}
+                <strong>Capital:</strong>
+                {' ' + country?.capital}
               </p>
             </div>
             <div className="detail-right">
               <p className="item">
-                <strong>Top-Level Domain:</strong> {country?.topLevelDomain}
+                <strong>Top-Level Domain:</strong>
+                {' ' + country?.topLevelDomain}
               </p>
               <p className="item">
                 <strong>Currencies:</strong>{' '}

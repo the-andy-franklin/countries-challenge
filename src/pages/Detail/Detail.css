@@ -27,7 +27,7 @@
 }
 
 .flag-wrapper {
-  flex: 1 1 40%;
+  flex: 1 1 calc(50% - 20px);
 }
 
 .detail-flag-img {
@@ -36,7 +36,7 @@
 }
 
 .details {
-  flex: 1 1 40%;
+  flex: 1 1 calc(50% - 20px);
   white-space: nowrap;
   display: flex;
   flex-direction: column;
@@ -65,6 +65,7 @@
 
 .border-wrapper {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 

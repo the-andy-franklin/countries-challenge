@@ -11,12 +11,9 @@ function App() {
   const [countries, setCountries] = useState<Array<Country>>([]);
 
   useEffect(() => {
-    console.log('going');
     fetch('https://restcountries.com/v2/all')
       .then((response) => response.json())
       .then((data: Country[]) => {
-        console.log('hi');
-        console.log(data);
         setCountries(data);
       })
       .catch((error) => {

@@ -25,9 +25,9 @@ const RegionFilter = ({ setRegion }: Props) => {
       <div className="select" onClick={handleDropdown}>
         <span>{selected}</span>
         {isOpen ? (
-          <span className="arrow">∧</span>
+          <span className="arrow">^</span>
         ) : (
-          <span className="arrow">v</span>
+          <span className="arrow rotate">^</span>
         )}
       </div>
       {isOpen && (

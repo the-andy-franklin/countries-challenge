@@ -17,7 +17,12 @@
 }
 
 .arrow {
-  font-size: 12px;
+  font-size: 20px;
+  transform: translate(-5%, 10%)
+}
+
+.rotate {
+  transform: rotate(180deg) translate(10%, 15%)
 }
 
 .options-wrapper {

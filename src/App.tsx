@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import DarkModeButton from './components/DarkModeButton/DarkModeButton';
 import Home from './pages/Home/Home';
-import Detail from './pages/Detail/Detail';
+import Detail, { CountryCodes } from './pages/Detail/Detail';
 import { Country } from './types/Country';
 
 function App() {
   const [countries, setCountries] = useState<Array<Country>>([]);
+  const [countryCodes, setCountryCodes] = useState<CountryCodes>({});
 
   useEffect(() => {
     fetch('https://restcountries.com/v2/all')
@@ -19,7 +20,16 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  });
+
+  useEffect(() => {
+    countries.forEach((country: Country) => {
+      setCountryCodes((prevState) => ({
+        ...prevState,
+        [country.alpha3Code]: country.name,
+      }));
+    });
+  }, [countries]);
 
   return (
     <div className="App">
@@ -31,7 +41,9 @@ function App() {
           <Route path="/" element={<Home countries={countries} />} />
           <Route
             path="/country/:name"
-            element={<Detail countries={countries} />}
+            element={
+              <Detail countries={countries} countryCodes={countryCodes} />
+            }
           />
         </Routes>
       </Router>

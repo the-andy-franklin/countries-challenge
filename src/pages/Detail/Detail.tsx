@@ -2,34 +2,23 @@ import './Detail.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Country } from '../../types/Country';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
-type CountryCodes = {
+export type CountryCodes = {
   [key: string]: string;
 };
 
 type Props = {
   countries: Country[];
+  countryCodes: CountryCodes;
 };
 
-const Detail = ({ countries }: Props) => {
+const Detail = ({ countries, countryCodes }: Props) => {
   const { name } = useParams();
   const navigate = useNavigate();
-  const [countryCodes, setCountryCodes] = useState<CountryCodes>({});
 
   const handleBack = () => {
     navigate('/');
   };
-
-  useEffect(() => {
-    countries.forEach((country: Country) => {
-      console.log(country.alpha3Code);
-      setCountryCodes((prevState) => ({
-        ...prevState,
-        [country.alpha3Code]: country.name,
-      }));
-    });
-  }, []);
 
   const country = countries.find(
     (country) => country.name.toLowerCase() === name?.toLowerCase(),

@@ -88,6 +88,10 @@
   box-shadow: var(--shadow)
 }
 
+.border-link {
+  color: var(--font-color)
+}
+
 @media (max-width: 350px) {
   .detail-container {
     display: flex;

@@ -1,5 +1,6 @@
 export type Country = {
   name: string;
+  alpha3Code: string;
   topLevelDomain: string[];
   nativeName: string;
   flags: {

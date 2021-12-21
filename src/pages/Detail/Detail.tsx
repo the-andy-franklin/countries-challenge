@@ -1,6 +1,12 @@
 import './Detail.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Country } from '../../types/Country';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+type CountryCodes = {
+  [key: string]: string;
+};
 
 type Props = {
   countries: Country[];
@@ -9,12 +15,25 @@ type Props = {
 const Detail = ({ countries }: Props) => {
   const { name } = useParams();
   const navigate = useNavigate();
+  const [countryCodes, setCountryCodes] = useState<CountryCodes>({});
 
   const handleBack = () => {
     navigate('/');
   };
 
-  const country = countries.find((country) => country.name === name);
+  useEffect(() => {
+    countries.forEach((country: Country) => {
+      console.log(country.alpha3Code);
+      setCountryCodes((prevState) => ({
+        ...prevState,
+        [country.alpha3Code]: country.name,
+      }));
+    });
+  }, []);
+
+  const country = countries.find(
+    (country) => country.name.toLowerCase() === name?.toLowerCase(),
+  );
 
   return (
     <div className="detail-page">
@@ -78,10 +97,20 @@ const Detail = ({ countries }: Props) => {
           <div className="border-wrapper">
             <strong className="border-title">Border Countries:</strong>
             <div className="border-countries">
-              {country?.borders?.map((borderCountry) => (
-                <div className="border-country" key={borderCountry}>
-                  {borderCountry}
-                </div>
+              {country?.borders?.map((borderCountry: string) => (
+                <Link
+                  className="border-link"
+                  to={
+                    countryCodes[borderCountry]
+                      ? `/country/${countryCodes[borderCountry]}`
+                      : '/'
+                  }
+                  key={`Link-${borderCountry}`}
+                >
+                  <div className="border-country" key={borderCountry}>
+                    {borderCountry}
+                  </div>
+                </Link>
               )) || <div className="border-country">&lt;None&gt;</div>}
             </div>
           </div>

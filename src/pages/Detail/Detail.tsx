@@ -1,11 +1,8 @@
 import './Detail.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Country } from '../../types/Country';
+import { CountryCodes } from '../../types/CountryCodes';
 import { Link } from 'react-router-dom';
-
-export type CountryCodes = {
-  [key: string]: string;
-};
 
 type Props = {
   countries: Country[];

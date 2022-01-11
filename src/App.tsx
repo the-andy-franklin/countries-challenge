@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import DarkModeButton from './components/DarkModeButton/DarkModeButton';
 import Home from './pages/Home/Home';
-import Detail, { CountryCodes } from './pages/Detail/Detail';
+import Detail from './pages/Detail/Detail';
 import { Country } from './types/Country';
+import { CountryCodes } from './types/CountryCodes';
 
 function App() {
   const [countries, setCountries] = useState<Array<Country>>([]);
@@ -45,6 +51,7 @@ function App() {
               <Detail countries={countries} countryCodes={countryCodes} />
             }
           />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </div>

@@ -35,6 +35,7 @@ function App() {
         [country.alpha3Code]: country.name,
       }));
     });
+    console.log(countryCodes);
   }, [countries]);
 
   return (

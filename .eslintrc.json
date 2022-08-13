@@ -23,7 +23,6 @@
         "prettier"
     ],
     "ignorePatterns": [
-        "src/serviceWorkerRegistration.ts",
         "src/service-worker.ts",
         "src/setupTests.ts",
         "capacitor.config.ts",

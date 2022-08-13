@@ -1,9 +1,10 @@
 .page {
   background-color: var(--background-color);
-  padding: 40px;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  overflow-x: hidden;
 }
 
 .filters {
